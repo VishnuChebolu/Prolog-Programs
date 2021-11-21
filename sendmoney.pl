@@ -33,7 +33,7 @@ values(A, B, C,UNIQUE) :- reverse(A,F), reverse(B,S), reverse(C,R), findvalue(F,
 
 findvalue([],[],[],_).
 findvalue([],[],[A],O):- A is O.
-findvalue([A|B],[C|D],[E|F],Q):- assignvalue(A), assignvalue(C),A=\=C ,P is A+C+Q, E is (A+C+Q)mod 10, Z is P//10,findvalue(B,D,F,Z).
+findvalue([A|B],[C|D],[E|F],Q):- assignvalue(A), assignvalue(C) ,P is A+C+Q, E is (A+C+Q)mod 10, Z is P//10,findvalue(B,D,F,Z).
 
 
 

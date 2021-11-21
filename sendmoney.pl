@@ -32,10 +32,10 @@ values(A, B, C,UNIQUE) :- reverse(A,F), reverse(B,S), reverse(C,R), findvalue(F,
 
 
 findvalue([],[],[],_).
-findvalue([],[],[A],O):- A is O.
+findvalue([],[],[A],O):- A is O, A=\=0.
 findvalue([A|B],[C|D],[E|F],Q):- assignvalue(A), assignvalue(C) ,P is A+C+Q, E is (A+C+Q)mod 10, Z is P//10,findvalue(B,D,F,Z).
 
 
 
-check:- values([S,E,N,D],[M,O,R,E],[M,O,N,E,Y],[S,E,N,D,M,O,R,Y]),M=\=0, write('S='),write(S),nl,write('E='),write(E),nl,write('N='),write(N),nl,write('D='),write(D),nl,write('M='),write(M),nl,write('O='),write(O),nl,write('R='),write(R),nl,write('Y='),write(Y).
+check:- values([S,E,N,D],[M,O,R,E],[M,O,N,E,Y],[S,E,N,D,M,O,R,Y]), write('S='),write(S),nl,write('E='),write(E),nl,write('N='),write(N),nl,write('D='),write(D),nl,write('M='),write(M),nl,write('O='),write(O),nl,write('R='),write(R),nl,write('Y='),write(Y).
 
